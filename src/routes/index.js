@@ -20,7 +20,7 @@ export default class CustomRouter extends Component {
 		}
 		return permission ? this.requireAuth(permission, component) : component;
 	};
-	getComponent = (routeItem, props) => {
+	createComponent = (routeItem, props) => {
 		const Component = AllComponents[routeItem.component];
 		if (routeItem.login) return <Component {...props} />;
 		else return this.requireLogin(<Component {...props} />, routeItem.auth);
@@ -36,7 +36,7 @@ export default class CustomRouter extends Component {
 									key={r.route || r.key}
 									exact
 									path={r.route || r.key}
-									component={(props) => this.getComponent(r, props)}
+									component={(props) => this.createComponent(r, props)}
 								/>
 							);
 						};

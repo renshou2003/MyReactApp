@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Routes from "./routes";
 import "antd/dist/antd.css";
+import './assets/index.less';
 const { Content, Footer } = Layout;
 
 class App extends Component {

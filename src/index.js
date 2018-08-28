@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import './assets/lib/animate.css';
 import { Provider } from "react-redux";
 import reducer from "./reducer";
 import thunk from "redux-thunk";

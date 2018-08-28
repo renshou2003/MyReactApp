@@ -3,7 +3,7 @@ import { Menu, Icon, Layout, Badge, Popover } from "antd";
 import screenfull from "screenfull";
 import { gitOauthToken, gitOauthInfo } from "../axios";
 import { queryString } from "../utils";
-import avater from "../assets/images/b1.jpg";
+import avater from "../assets/imgs/b1.jpg";
 import SiderCustom from "./SiderCustom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
