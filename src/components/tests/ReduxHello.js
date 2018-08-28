@@ -13,17 +13,35 @@ class ReduxHello extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
-			console.log(err);
+      console.log(err);
+      const { getFieldDecorator } = this.props.form;
 			if (!err) {
-				Modal.info({title: 'This is an info message',
-        content: 'some messages...some messages...',okText:'知道了'});
+				Modal.info({
+					title: 'This is an info message',
+					content: (
+						<Form>
+							<FormItem>
+								{getFieldDecorator('userName1', {
+									rules: [ { required: true, message: 'Please input your username!' } ]
+								})(
+									<Input
+										prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+										placeholder="enter your name"
+									/>
+								)}
+							</FormItem>
+						</Form>
+					),
+					okText: '知道了'
+				});
 			} else {
 				var arra = [];
-				Object.keys(err).map((key) => 
-        err[key].errors.map((e) => arra.push(e.message))
-				);
-				Modal.error({title: 'This is an error message',
-        content: arra.join(','),okText:'知道了'});
+				Object.keys(err).map((key) => err[key].errors.map((e) => arra.push(e.message)));
+				Modal.error({
+					title: 'This is an error message',
+					content: arra.join(','),
+					okText: '知道了'
+				});
 			}
 		});
 	};
