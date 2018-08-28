@@ -4,15 +4,15 @@ import AllComponents from "../components";
 import RoutesConfig from "./config";
 
 export default class CustomRouter extends Component {
-  requireAuth(permission, component) {
+  requireAuth = (permission, component) => {
     const { auth } = this.props;
     const permissions = auth.data ? auth.data.permissions : null;
     // const { auth } = store.getState().httpData;
     if (!permissions || !permissions.includes(permission))
       return <Redirect to={"404"} />;
     return component;
-  }
-  requireLogin(component, permission) {
+  };
+  requireLogin = (component, permission) => {
     const { auth } = this.props;
     const permissions = auth.data ? auth.data.permissions : null;
     if (process.env.NODE_ENV === "production" && !permissions) {
@@ -20,12 +20,12 @@ export default class CustomRouter extends Component {
       return <Redirect to={"/login"} />;
     }
     return permission ? this.requireAuth(permission, component) : component;
-  }
-  getComponent(routeItem, props) {
+  };
+  getComponent = (routeItem, props) => {
     const Component = AllComponents[routeItem.component];
     if (routeItem.login) return <Component {...props} />;
     else this.requireLogin(<Component {...props} />, routeItem.auth);
-  }
+  };
   render() {
     return (
       <Switch>
@@ -37,7 +37,13 @@ export default class CustomRouter extends Component {
                   key={r.route || r.key}
                   exact
                   path={r.route || r.key}
-                  component={props => this.getComponent(r, props)}
+                  component={props =>
+                    r.login ? (
+                      <Component {...props} />
+                    ) : (
+                      this.requireLogin(<Component {...props} />, r.auth)
+                    )
+                  }
                 />
               );
             };
