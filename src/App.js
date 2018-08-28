@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "antd/dist/antd.css";
 import { Layout, notification, Icon } from "antd";
 import SiderCustom from "./components/SiderCustom";
 import HeaderCustom from "./components/HeaderCustom";
@@ -7,6 +6,7 @@ import { receiveData } from "./actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Routes from "./routes";
+import "antd/dist/antd.css";
 const { Content, Footer } = Layout;
 
 class App extends Component {
@@ -98,18 +98,6 @@ class App extends Component {
             React-Admin ©{new Date().getFullYear()} Created by 865470087@qq.com
           </Footer>
         </Layout>
-
-        {/* {
-                    responsive.data.isMobile && (   // 手机端对滚动很慢的处理
-                        <style>
-                        {`
-                            #root{
-                                height: auto;
-                            }
-                        `}
-                        </style>
-                    )
-                } */}
       </Layout>
     );
   }
