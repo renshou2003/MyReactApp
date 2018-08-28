@@ -1,0 +1,28 @@
+{
+  "name": "my-react-redux-app",
+  "version": "1.0.0",
+  "description": "我的测试react应用",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "antd": "3.8.4",
+    "axios": "0.18.0",
+    "prop-types": "15.6.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-hot-loader": "4.3.5",
+    "react-redux": "5.0.7",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "1.1.4",
+    "redux": "4.0.0",
+    "redux-thunk": "2.3.0",
+    "screenfull": "3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
