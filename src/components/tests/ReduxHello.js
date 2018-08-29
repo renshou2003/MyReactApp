@@ -32,7 +32,8 @@ class ReduxHello extends Component {
 							</FormItem>
 						</Form>
 					),
-					okText: '知道了'
+          okText: '知道了'
+          
 				});
 			} else {
 				var arra = [];
