@@ -1,3 +1,7 @@
+安装antd字体到本地
+$ yarn add antd-iconfont
+"@icon-url":"'~antd-iconfont/iconfont'"
+
 antd主题定制所有变量表：https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
 
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.8.4",
+    "antd-iconfont": "^3.0.3",
     "autoprefixer": "7.1.1",
     "axios": "^0.16.2",
     "babel-core": "6.25.0",
